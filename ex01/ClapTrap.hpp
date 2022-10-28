@@ -6,7 +6,7 @@
 /*   By: dbelpaum <dbelpaum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 13:41:57 by dbelpaum          #+#    #+#             */
-/*   Updated: 2022/10/28 16:59:27 by dbelpaum         ###   ########.fr       */
+/*   Updated: 2022/10/28 16:59:23 by dbelpaum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class ClapTrap
 
 		ClapTrap &		operator=( ClapTrap const & rhs );
 
-	private:
+	protected:
 
 		std::string	_name;
 		int			_health;
@@ -52,7 +52,5 @@ class ClapTrap
 		int			_attackDamage;
 
 };
-
-// std::ostream &			operator<<( std::ostream & o, ClapTrap const & i );
 
 #endif /* ******************************************************** CLAPTRAP_H */

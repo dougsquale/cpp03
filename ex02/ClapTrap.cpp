@@ -6,7 +6,7 @@
 /*   By: dbelpaum <dbelpaum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 13:41:54 by dbelpaum          #+#    #+#             */
-/*   Updated: 2022/10/28 15:25:12 by dbelpaum         ###   ########.fr       */
+/*   Updated: 2022/10/28 16:20:45 by dbelpaum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,6 @@ ClapTrap &				ClapTrap::operator=( ClapTrap const & rhs )
 	return *this;
 }
 
-// std::ostream &			operator<<( std::ostream & o, ClapTrap const & i )
-// {
-// 	//o << "Value = " << i.getValue();
-// 	return o;
-// }
-
-
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
@@ -84,27 +77,27 @@ void	ClapTrap::attack(const std::string& target)
 {
 	if (_energy <= 0)
 	{
-		std::cout << "ClapTrap " << _name << " doesn't have enough energy to attack " << target << std::endl;
+		std::cout << _name << " doesn't have enough energy to attack " << target << std::endl;
 		return ;
 	}
 	_energy--;
-	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
+	std::cout << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	_health -= amount;
-	std::cout << "ClapTrap " << _name << " takes " << amount << " points of damage!" << std::endl;
+	std::cout << _name << " takes " << amount << " points of damage!" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (_energy <= 0)
 	{
-		std::cout << "ClapTrap " << _name << " doesn't have enough energy to be repaired" << std::endl;
+		std::cout << _name << " doesn't have enough energy to be repaired" << std::endl;
 		return ;
 	}
-	std::cout << "ClapTrap " << _name << " repaired itself for " << amount << " health points!" << std::endl;
+	std::cout << _name << " repaired itself for " << amount << " health points!" << std::endl;
 	_energy--;
 	_health += amount;
 }
